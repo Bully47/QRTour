@@ -1,0 +1,15 @@
+<div class="text-center my-2">
+  <a type="button" class="btn btn-outline-primary mx-1" href="/dashboard">Dashboard</a>
+  <a type="button" class="btn btn-outline-primary mx-1" href="/tourCreate">Créer un parcours</a>
+</div>
+
+<div class="d-flex flex-wrap justify-content-around my-3">
+  <% parcours.forEach(function(parcour){ %>
+    <div class="card col-3 m-2">
+      <div class="card-body">
+        <h5 class="card-title"><%= parcour.name %></h5>
+        <a type="button" class="btn btn-outline-primary" href="/tourOptions/<%= parcour._id %>">Options</a>
+      </div>
+    </div>
+    <% }); %>
+    </div>

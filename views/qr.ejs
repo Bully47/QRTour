@@ -1,0 +1,18 @@
+<div class="card col-6 mx-auto my-3">
+  <div class="card-body text-center">
+    <a href="/point/<%= id %>" type="button" class="btn btn-outline-primary mx-1 mb-3">Retour</a>
+    <a href="/" type="button" class="btn btn-outline-primary mx-1 mb-3">Map</a>
+    <div style="transform: scale(1);" id="placeHolder"></div>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var id = <%- JSON.stringify(id) %>;
+  var ss = 'https://qr-tour.herokuapp.com/point/' + id;
+  var typeNumber = 4;
+  var errorCorrectionLevel = 'L';
+  var qr = qrcode(typeNumber, errorCorrectionLevel);
+  qr.addData(ss);
+  qr.make();
+  document.getElementById('placeHolder').innerHTML = qr.createImgTag();
+</script>

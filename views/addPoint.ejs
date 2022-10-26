@@ -1,0 +1,109 @@
+<div class="col-md-8 mb-3 mt-2 mt-md-5 mx-auto">
+  <div class="card card-body">
+    <div class="text-center">
+      <a type="button" class="btn btn-outline-primary mx-1" href="/dashboard">Dashbaord</a>
+      <a type="button" class="btn btn-outline-primary mx-1" href="/">Map</a>
+    </div>
+    <form action="/addPoint" method="POST" enctype="multipart/form-data">
+      <div class="form-group">
+        <label for="name">Nom</label>
+        <input type="text" id="name" name="name" class="form-control" placeholder="Nom" required="required"/>
+      </div>
+
+      <div class="form-group">
+        <label for="address">Adresse</label>
+        <input type="text" id="address" name="address" class="form-control" placeholder="Adresse" required="required"/>
+      </div>
+
+      <div class="form-group">
+        <label for="cp">Code Postal</label>
+        <input type="text" id="cp" name="cp" class="form-control" placeholder="Code Postal" required="required"/>
+      </div>
+
+      <div class="form-group">
+        <label for="city">Ville</label>
+        <input type="text" id="city" name="city" class="form-control" placeholder="Ville" required="required"/>
+      </div>
+
+      <!-- <div class="form-group"> <label for="description">Description</label> <textarea class="form-control" name="description" id="description" rows="5"></textarea> </div> -->
+
+      <div id="editor"></div>
+      <input name="description" type="hidden">
+      <input name="descriptionHTML" type="hidden">
+
+      <div class="form-group">
+        <div class="input-group input-file">
+          <!-- <span class="input-group-prepend"> <button class="btn btn-secondary btn-choose" type="button">Image 1</button> </span> -->
+          <input type="text" class="form-control" placeholder='Choisissez une image'/>
+          <span class="input-group-append">
+            <button class="btn btn-outline-danger btn-reset" type="button">Supprimer</button>
+          </span>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <button type="submit" class="btn btn-outline-success mx-1">Valider
+          <i class="fas fa-check ml-1"></i>
+        </button>
+        <a href="/dashboard" type="button" class="btn btn-outline-danger mx-1">Annuler
+          <i class="fas fa-undo ml-1"></i>
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script type="text/javascript">
+  var quill = new Quill('#editor', {
+    modules: {
+      toolbar: [
+        [
+          'bold', 'italic'
+        ],
+        [
+          'link', 'blockquote', 'image'
+        ]
+      ]
+    },
+    placeholder: 'Description',
+    theme: 'snow'
+  });
+
+  var form = document.querySelector('form');
+  form.onsubmit = function() {
+    var description = document.querySelector('input[name=description]');
+    var descriptionHTML = document.querySelector('input[name=descriptionHTML]');
+    description.value = JSON.stringify(quill.getContents());
+    descriptionHTML.value = quill.root.innerHTML;
+    console.log(descriptionHTML.value);
+    return;
+  };
+
+  function bs_input_file() {
+    $(".input-file").before(function() {
+      if (!$(this).prev().hasClass('input-ghost')) {
+        var element = $("<input type='file' name='avatar' class='input-ghost' style='visibility:hidden; height:0'>");
+        element.attr("name", $(this).attr("name"));
+        element.change(function() {
+          element.next(element).find('input').val((element.val()).split('\\').pop());
+        });
+        $(this).find("button.btn-choose").click(function() {
+          element.click();
+        });
+        $(this).find("button.btn-reset").click(function() {
+          element.val(null);
+          $(this).parents(".input-file").find('input').val('');
+        });
+        $(this).find('input').css("cursor", "pointer");
+        $(this).find('input').mousedown(function() {
+          $(this).parents('.input-file').prev().click();
+          return false;
+        });
+        return element;
+      }
+    });
+  }
+  $(function() {
+    bs_input_file();
+  });
+</script>

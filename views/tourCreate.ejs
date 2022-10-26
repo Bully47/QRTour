@@ -1,0 +1,29 @@
+<div class="text-center my-2">
+  <a type="button" class="btn btn-outline-primary" href="/dashboard">Dashboard</a>
+</div>
+
+<form action="/tourCreate" method="POST">
+  <div class="d-flex flex-wrap justify-content-around my-3">
+    <% points.forEach(function(point){ %>
+      <div class="card col-3 m-2">
+        <img class="card-img-top" src="/pictures/<%= point.avatar %>" alt="image du lieu">
+        <div class="card-body">
+          <h5 class="card-title"><%= point.name %></h5>
+          <p class="card-text"><%= point.address %></p>
+          <input
+            name="<%= point._id %>"
+            type="checkbox"
+            data-toggle="toggle"
+            data-on="<i class='far fa-times-circle' style='transform: scale(1.5);'></i>."
+            data-off="<i class='far fa-check-circle' style='transform: scale(1.5);'></i>."
+            data-onstyle="success"
+            data-offstyle="danger">
+        </div>
+      </div>
+      <% }); %>
+      </div>
+
+      <div class="text-center my-2">
+        <input type="submit" class="btn btn-outline-primary">
+      </div>
+    </form>
