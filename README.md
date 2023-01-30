@@ -38,6 +38,7 @@ The application should now be running at [http://localhost](http://localhost) an
 - [Express.js](https://expressjs.com/)
 - [MongoDB](https://www.mongodb.com/)
 - [EJS](https://npmjs.com/package/ejs)
+- [Leaflet](https://leafletjs.com/)
 
 ## Authors
 
