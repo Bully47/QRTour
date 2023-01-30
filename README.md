@@ -15,21 +15,21 @@ Before you begin, make sure you have the following installed on your system:
 
 1. Clone the repository
 
-git clone https://github.com/VivienHuc/QRTour.git
+``` git clone https://github.com/VivienHuc/QRTour.git ``` 
 
 2. Navigate to the project directory
 
-cd QRTour
+``` cd QRTour ```
 
 3. Install the dependencies
 
-npm install
+``` npm install ```
 
 ### Running the Application
 
 To run the application in development mode, use the following command:
 
-npm run dev
+``` npm run dev ```
 
 The application should now be running at [http://localhost](http://localhost)
 
