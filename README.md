@@ -9,7 +9,6 @@ These instructions will get you a copy of the project up and running on your loc
 Before you begin, make sure you have the following installed on your system:
 
 - [Node.js](https://nodejs.org/en/download/)
-- [MongoDB](https://docs.mongodb.com/manual/installation/)
 
 ### Installation
 
@@ -29,9 +28,10 @@ Before you begin, make sure you have the following installed on your system:
 
 To run the application in development mode, use the following command:
 
-``` npm run dev ```
+``` npm run start ```
 
 The application should now be running at [http://localhost](http://localhost)
+The Dashboard is available at this address [http://localhost/dashboard](http://localhost)
 
 ## Built With
 
