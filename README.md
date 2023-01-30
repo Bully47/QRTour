@@ -1,3 +1,12 @@
+
+[![Node.js](https://img.shields.io/badge/Node.js-brightgreen.svg?logo=node.js&style=flat-square)](https://nodejs.org/)
+[![Express.js](https://img.shields.io/badge/Express.js-brightgreen.svg?logo=express.js&style=flat-square)](https://expressjs.com/)
+[![EJS](https://img.shields.io/badge/EJS-brightgreen.svg?logo=ejs&style=flat-square)](https://npmjs.com/package/ejs)
+[![MongoDB](https://img.shields.io/badge/MongoDB-brightgreen.svg?logo=mongodb&style=flat-square)](https://www.mongodb.com/)
+[![Mongoose](https://img.shields.io/badge/Mongoose-brightgreen.svg?logo=mongoose&style=flat-square)](https://mongoosejs.com/)
+[![Leaflet.js](https://img.shields.io/badge/Leaflet.js-brightgreen.svg?logo=leaflet&style=flat-square)](https://leafletjs.com/)
+[![Build Status](https://img.shields.io/badge/build-not%20passing-red.svg?style=flat-square)](#)
+
 # QRTour
 
 ## Getting Started
@@ -41,5 +50,7 @@ The application should now be running at [http://localhost](http://localhost) an
 - [Leaflet](https://leafletjs.com/)
 
 ## Authors
-
 - Vivien Huc
+
+## License
+This project is licensed under the terms of the MIT license.
