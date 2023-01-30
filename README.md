@@ -30,8 +30,7 @@ To run the application in development mode, use the following command:
 
 ``` npm run start ```
 
-The application should now be running at [http://localhost](http://localhost)
-The Dashboard is available at this address [http://localhost/dashboard](http://localhost)
+The application should now be running at [http://localhost](http://localhost) and the Dashboard is available at this address [http://localhost/dashboard](http://localhost)
 
 ## Built With
 
